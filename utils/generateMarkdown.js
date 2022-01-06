@@ -3,11 +3,8 @@
 function renderLicenseBadge(license) {
   switch (license) {
     case "Apache 2.0 License": return "https://img.shields.io/badge/License-Apache_2.0-blue.svg";
-      break;
     case "Boost": return "https://img.shields.io/badge/License-Boost_1.0-lightblue.svg";
-      break;
     case "BSD": return "https://img.shields.io/badge/License-BSD_3--Clause-blue.svg";
-      break;
     default: return "";
   }
 }
@@ -17,11 +14,8 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   switch (license) {
     case "Apache 2.0 License": return "https://opensource.org/licenses/Apache-2.0";
-      break;
     case "Boost": return "https://www.boost.org/LICENSE_1_0.txt";
-      break;
     case "BSD": return "https://opensource.org/licenses/BSD-3-Clause";
-      break;
     default: return "";
   }
 }
@@ -42,12 +36,28 @@ function generateMarkdown(data) {
   displayString += renderLicenseSection(data.license);
   displayString += "\n";
   displayString += `\n## Description\n${data.description}\n\n`;
-  displayString += "## Table of Contents\n\n- [Installation](#installation)\n";
+  displayString += "## Table of Contents\n\n";
+  if (data.firstLink !== "" || data.secondLink !== "") {
+    displayString += "- [Links](#links)\n";
+  }
+  if (data.screenshot !== "") {
+    displayString += "- [Example](#example)\n";
+  }
+  displayString += "- [Installation](#installation)\n";
   displayString += "- [Usage](#usage)\n";
   displayString += "- [License](#license)\n";
   displayString += "- [Contributing](#contributing)\n";
   displayString += "- [Tests](#tests)\n";
   displayString += "- [Questions](#questions)\n";
+  if (data.credits !== "") {
+    displayString += "- [Credits](#credits)\n";
+  }
+  if (data.firstLink !== "" || data.secondLink !== "") {
+    displayString += `\n ## Links\n${data.firstLink}\n\n${data.secondLink}\n`;
+  }
+  if (data.screenshot !== "") {
+    displayString += `\n ## Example\n![Screenshot](${data.screenshot})\n`;
+  }
   displayString += "\n ## Installation\nTo install necessary dependencies, run the following command:\n";
   displayString += "\n```\n" + data.installDep + "\n```\n";
   displayString += `\n ## Usage\n${data.userKnow}\n`;
@@ -61,8 +71,23 @@ function generateMarkdown(data) {
   displayString += "\n ## Tests\nTo run tests, run the following command:\n";
   displayString += "\n```\n" + data.runTests + "\n```\n";
   displayString += `\n ## Questions\nIf you have any questions about the repo, open an issue or contact me directly at [${data.email}](mailto:${data.email}).\n`;
-  displayString += `You can find more of my work at [${data.userName}](https://github.com/${data.userName}).`;
+  displayString += `You can find more of my work at [${data.username}](https://github.com/${data.username}).\n`;
+  displayString += handleCredits(data.credits);
   return displayString;
+}
+
+//This function splits the creditors by comma and puts them in a list, return empty if no creditors
+function handleCredits(credits) {
+  if (credits === "") {
+    return "";
+  }
+  let output = "";
+  output += "\n ## Credits\n";
+  let creditors = credits.split(",");
+  creditors.forEach(e=> {
+    output += `* ${e}\n`;
+  });
+  return output;
 }
 
 module.exports = generateMarkdown;

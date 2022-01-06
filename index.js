@@ -13,7 +13,12 @@ const questions = [
     "What command should be run to install dependencies?",
     "What command should be run to run tests?",
     "What does the user need to know about using this repo?",
-    "What does the user need to know about contributing to the repo?"
+    "What does the user need to know about contributing to the repo?",
+    "Please enter the link to your github repo (leave blank if not applicable)",
+    "Please enter any other link you wish to provide (leave blank if not applicable)",
+    "Please enter the url of a screenshot you wish to provide (leave blank if not applicable)",
+    "List anyone you wish to credit, such as collaborators, seperated by commas (leave blank if not applicable)",
+    "Please enter the desired filename (if blank will be README.md)"
 ];
 
 // TODO: Create a function to write README file
@@ -34,7 +39,7 @@ const getUserInput = function () {
         {
             type: "input",
             message: questions[0],
-            name: "userName",
+            name: "username",
         },
         {
             type: "input",
@@ -77,12 +82,41 @@ const getUserInput = function () {
             message: questions[8],
             name: "userContribute",
         },
+        {
+            type: "input",
+            message: questions[9],
+            name: "firstLink",
+        },
+        {
+            type: "input",
+            message: questions[10],
+            name: "secondLink",
+        },
+        {
+            type: "input",
+            message: questions[11],
+            name: "screenshot",
+        },
+        {
+            type: "input",
+            message: questions[12],
+            name: "credits",
+        },
+        {
+            type: "input",
+            message: questions[13],
+            name: "filename",
+        },
     ]).then((response) => {
-        writeToFile("README.md", generateMarkdown(response));
+        let filename = response.filename;
+        if (filename === "") {
+            filename = "README.md";
+        }
+        writeToFile(filename, generateMarkdown(response));
     }).catch((error) => {
         console.log(error);
     });
-}
+};
 
 // Function call to initialize app
 init();
