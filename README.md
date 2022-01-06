@@ -1,8 +1,8 @@
-# david
+# test
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Description
-david
+test
 
 ## Table of Contents
 
@@ -17,25 +17,25 @@ david
 To install necessary dependencies, run the following command:
 
 ```
-david
+test
 ```
 
  ## Usage
-david
+test
 
  ## License
 This project is licensed under the Apache 2.0 License.
 
  ## Contributing
-david
+test
 
  ## Tests
 To run tests, run the following command:
 
 ```
-david
+test
 ```
 
  ## Questions
-If you have any questions about the repo, open an issue or contact me directly at [david](mailto:david).
+If you have any questions about the repo, open an issue or contact me directly at [test@gmail.com](mailto:test@gmail.com).
 You can find more of my work at [davidschepis](https://github.com/davidschepis).
