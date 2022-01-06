@@ -29,6 +29,9 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
+  if (license === "None") {
+    return "";
+  }
   return "[![License](" + renderLicenseBadge(license) + ")](" + renderLicenseLink(license) + ")";
 }
 
@@ -48,7 +51,12 @@ function generateMarkdown(data) {
   displayString += "\n ## Installation\nTo install necessary dependencies, run the following command:\n";
   displayString += "\n```\n" + data.installDep + "\n```\n";
   displayString += `\n ## Usage\n${data.userKnow}\n`;
-  displayString += `\n ## License\nThis project is licensed under the ${data.license}.\n`;
+  if (data.license === "None") {
+    displayString += `\n ## License\nThis project is not licensed\n`;
+  }
+  else {
+    displayString += `\n ## License\nThis project is licensed under the ${data.license}.\n`;
+  }
   displayString += `\n ## Contributing\n${data.userContribute}\n`;
   displayString += "\n ## Tests\nTo run tests, run the following command:\n";
   displayString += "\n```\n" + data.runTests + "\n```\n";
