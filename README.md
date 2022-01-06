@@ -1,15 +1,15 @@
-# short
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# CHABS
+[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Description
-short
+short descrip
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Contributing](#contribution)
+- [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
 
@@ -17,25 +17,25 @@ short
 To install necessary dependencies, run the following command:
 
 ```
-short
+npm -i
 ```
 
  ## Usage
-short
+\nothing
 
  ## License
-This project is licensed under the Apache 2.0 License.
+This project is licensed under the BSD.
 
  ## Contributing
-short
+nothing
 
  ## Tests
 To run tests, run the following command:
 
 ```
-short
+npmn test
 ```
 
  ## Questions
-If you have any questions about the repo, open an issue or contact me directly at [fdsfsd@gmail.com](mailto:fdsfsd@gmail.com).
+If you have any questions about the repo, open an issue or contact me directly at [da@gmail.com](mailto:da@gmail.com).
 You can find more of my work at [davidschepis](https://github.com/davidschepis).
