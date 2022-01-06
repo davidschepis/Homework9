@@ -1,8 +1,8 @@
-# CHABS
-[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+# Chab Project
+[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
 
 ## Description
-short descrip
+short descript
 
 ## Table of Contents
 
@@ -17,14 +17,14 @@ short descrip
 To install necessary dependencies, run the following command:
 
 ```
-npm -i
+npm- i
 ```
 
  ## Usage
-\nothing
+nothing
 
  ## License
-This project is licensed under the BSD.
+This project is licensed under the Boost.
 
  ## Contributing
 nothing
@@ -33,9 +33,9 @@ nothing
 To run tests, run the following command:
 
 ```
-npmn test
+aflsd -i
 ```
 
  ## Questions
-If you have any questions about the repo, open an issue or contact me directly at [da@gmail.com](mailto:da@gmail.com).
+If you have any questions about the repo, open an issue or contact me directly at [david@gmail.com](mailto:david@gmail.com).
 You can find more of my work at [davidschepis](https://github.com/davidschepis).
