@@ -29,7 +29,7 @@ function init() {
 }
 
 //This function prompts the user for information about their github project
-function getUserInput() {
+const getUserInput = function() {
     inquirer.prompt([
         {
             type: "input",
@@ -86,7 +86,9 @@ function getUserInput() {
 
 //This function formats the data for the readme based on the user input
 const createData = data => {
-    console.log(data);
+    let displayString = "";
+    displayString += `# <${data.projectName}`;
+    writeToFile("README.md", displayString);
 }
 
 // Function call to initialize app
