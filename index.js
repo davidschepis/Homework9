@@ -29,7 +29,7 @@ function init() {
 }
 
 //This function prompts the user for information about their github project
-const getUserInput = function() {
+const getUserInput = function () {
     inquirer.prompt([
         {
             type: "input",
@@ -54,7 +54,7 @@ const getUserInput = function() {
         {
             type: "list",
             message: questions[4],
-            name: "username",
+            name: "license",
             choices: ["Apache 2.0 License", "Boost", "BSD", "None"],
         },
         {
@@ -87,7 +87,34 @@ const getUserInput = function() {
 //This function formats the data for the readme based on the user input
 const createData = data => {
     let displayString = "";
-    displayString += `# <${data.projectName}`;
+    displayString += `# ${data.projectName}\n`;
+    switch (data.license) {
+        case "Apache 2.0 License": displayString += "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+            break;
+        case "Boost": displayString += "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)";
+            break;
+        case "BSD": displayString += "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+            break;
+        default: displayString += "\n";
+    }
+    displayString += "\n";
+    displayString += `\n## Description\n${data.description}\n\n`;
+    displayString += "## Table of Contents\n\n- [Installation](#installation)\n";
+    displayString += "- [Usage](#usage)\n";
+    displayString += "- [License](#license)\n";
+    displayString += "- [Contributing](#contribution)\n";
+    displayString += "- [Tests](#tests)\n";
+    displayString += "- [Questions](#questions)\n";
+    displayString += "\n ## Installation\nTo install necessary dependencies, run the following command:\n";
+    displayString += "\n```\n" + data.installDep + "\n```\n";
+    displayString += `\n ## Usage\n${data.userKnow}\n`;
+    displayString += `\n ## License\nThis project is licensed under the ${data.license}.\n`;
+    displayString += `\n ## Contributing\n${data.userContribute}\n`;
+    displayString += "\n ## Tests\nTo run tests, run the following command:\n";
+    displayString += "\n```\n" + data.runTests + "\n```\n";
+    displayString += `\n ## Questions\nIf you have any questions about the repo, open an issue or contact me directly at [${data.email}](mailto:${data.email}).\n`;
+    displayString += `You can find more of my work at [${data.userName}](https://github.com/${data.userName}).`;
+    
     writeToFile("README.md", displayString);
 }
 
