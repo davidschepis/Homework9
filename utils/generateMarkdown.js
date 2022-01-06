@@ -70,8 +70,8 @@ function generateMarkdown(data) {
   displayString += `\n ## Contributing\n${data.userContribute}\n`;
   displayString += "\n ## Tests\nTo run tests, run the following command:\n";
   displayString += "\n```\n" + data.runTests + "\n```\n";
-  displayString += `\n ## Questions\nIf you have any questions about the repo, open an issue or contact me directly at [${data.email}](mailto:${data.email}).\n`;
-  displayString += `You can find more of my work at [${data.username}](https://github.com/${data.username}).\n`;
+  displayString += `\n ## Questions\nPlease contact me at [${data.email}](mailto:${data.email}) with any questions.\n`;
+  displayString += `Github Repo: [${data.username}](https://github.com/${data.username}).\n`;
   displayString += handleCredits(data.credits);
   return displayString;
 }
