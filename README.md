@@ -1,8 +1,8 @@
-# Chab Project
-[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
+# david
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Description
-short descript
+david
 
 ## Table of Contents
 
@@ -17,25 +17,25 @@ short descript
 To install necessary dependencies, run the following command:
 
 ```
-npm- i
+david
 ```
 
  ## Usage
-nothing
+david
 
  ## License
-This project is licensed under the Boost.
+This project is licensed under the Apache 2.0 License.
 
  ## Contributing
-nothing
+david
 
  ## Tests
 To run tests, run the following command:
 
 ```
-aflsd -i
+david
 ```
 
  ## Questions
-If you have any questions about the repo, open an issue or contact me directly at [david@gmail.com](mailto:david@gmail.com).
+If you have any questions about the repo, open an issue or contact me directly at [david](mailto:david).
 You can find more of my work at [davidschepis](https://github.com/davidschepis).

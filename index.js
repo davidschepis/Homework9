@@ -25,7 +25,7 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    
+
     getUserInput();
 }
 
@@ -79,6 +79,14 @@ const getUserInput = function () {
             name: "userContribute",
         },
     ]).then((response) => {
+        fs.unlink("README.md", (err) => {
+            if (err) {
+                console.log ('error');
+            }
+            else {
+                "README.md was deleted";
+            }
+        })
         writeToFile("README.md", generateMarkdown(response));
     }).catch((error) => {
         console.log(error);
