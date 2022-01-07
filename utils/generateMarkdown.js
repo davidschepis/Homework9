@@ -26,14 +26,14 @@ function renderLicenseSection(license) {
   if (license === "None") {
     return "";
   }
-  return "[![License](" + renderLicenseBadge(license) + ")](" + renderLicenseLink(license) + ")";
+  return `\n ## License\nThis project is licensed under the ${license} license.\n`;
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   let displayString = "";
   displayString += `# ${data.projectName}\n`;
-  displayString += renderLicenseSection(data.license);
+  displayString += "[![License](" + renderLicenseBadge(data.license) + ")](" + renderLicenseLink(data.license) + ")";
   displayString += "\n";
   displayString += `\n## Description\n${data.description}\n\n`;
   displayString += "## Table of Contents\n\n";
@@ -64,9 +64,7 @@ function generateMarkdown(data) {
   if (data.license === "None") {
     displayString += `\n ## License\nThis project is not licensed\n`;
   }
-  else {
-    displayString += `\n ## License\nThis project is licensed under the ${data.license}.\n`;
-  }
+  displayString += renderLicenseSection(data.license);
   displayString += `\n ## Contributing\n${data.userContribute}\n`;
   displayString += "\n ## Tests\nTo run tests, run the following command:\n";
   displayString += "\n```\n" + data.runTests + "\n```\n";
@@ -84,7 +82,7 @@ function handleCredits(credits) {
   let output = "";
   output += "\n ## Credits\n";
   let creditors = credits.split(",");
-  creditors.forEach(e=> {
+  creditors.forEach(e => {
     output += `* ${e}\n`;
   });
   return output;
